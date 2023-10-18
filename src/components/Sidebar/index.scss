@@ -90,6 +90,13 @@
                     font-size: 12px;
             }
         }
+        a.projects-link{
+            &:after{
+                content: 'Projects';
+                font-family: sans-serif;
+                    font-size: 12px;
+            }
+        }
         a.active{
             svg{
                 color:#ffd700;

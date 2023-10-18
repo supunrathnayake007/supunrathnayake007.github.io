@@ -5,6 +5,7 @@ import Sr_logo_sub from '../../assets/images/sr.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEnvelope, faHome, faUser } from '@fortawesome/free-solid-svg-icons'
 import {
+  faAndroid,
   faFacebook,
   faGithub,
   faLinkedin,
@@ -37,6 +38,14 @@ const Sidebar = () => (
         className="contact-link"
       >
         <FontAwesomeIcon icon={faEnvelope} color="#4d4d4e" />
+      </NavLink>
+      <NavLink
+        exact="true"
+        activeclassname="active"
+        to="/projects"
+        className="projects-link"
+      >
+        <FontAwesomeIcon icon={faAndroid} color="#4d4d4e" />
       </NavLink>
     </nav>
     <ul>
