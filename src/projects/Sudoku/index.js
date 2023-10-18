@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import SudokuMain from './SudokuMain.js'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 function SudokuRoot() {
@@ -22,8 +23,7 @@ function SudokuRoot() {
 
   return (
     <div className="container">
-      {/* <SudokuMain apiUrls={apiUrls} developerMode={true} /> */}
-      <p>123456789</p>
+      <SudokuMain apiUrls={apiUrls} developerMode={true} />
     </div>
   )
 }
