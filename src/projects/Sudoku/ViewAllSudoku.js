@@ -1,83 +1,84 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react'
+// import './index.css'
 
 function ViewAllSudoku(props) {
   //console.log("sudoku Manager here. line 23");
-  const [data, setData] = useState([]); // sudoku list
-  const [sudokuUrl, setSudokuUrl] = useState("");
-  const [sudokuData, setSudokuData] = useState(null);
-  const [sudokuName, setSudokuName] = useState("");
-  const [gridMode, setGridMode] = useState("view"); //Modes- "view","create"
+  const [data, setData] = useState([]) // sudoku list
+  const [sudokuUrl, setSudokuUrl] = useState('')
+  const [sudokuData, setSudokuData] = useState(null)
+  const [sudokuName, setSudokuName] = useState('')
+  const [gridMode, setGridMode] = useState('view') //Modes- "view","create"
 
   //get selected sudoku data
   useEffect(() => {
-    debugger;
+    debugger
     const fetchData = async () => {
       try {
-        const response = await fetch(sudokuUrl);
-        const jsonData = await response.json();
-        setSudokuData(jsonData); // Update the state with the API response data
+        const response = await fetch(sudokuUrl)
+        const jsonData = await response.json()
+        setSudokuData(jsonData) // Update the state with the API response data
       } catch (error) {
-        console.error("Error fetching data:", error);
+        console.error('Error fetching data:', error)
       }
-    };
-    if (sudokuUrl !== "") {
-      fetchData();
     }
-  }, [sudokuUrl]);
+    if (sudokuUrl !== '') {
+      fetchData()
+    }
+  }, [sudokuUrl])
 
   //send back selected sudoku data
   useEffect(() => {
-    debugger;
+    debugger
     if (sudokuData !== null) {
-      if (gridMode === "view") {
-        props.callback({ sudokuData, sudokuName, gridMode, showSave: false });
+      if (gridMode === 'view') {
+        props.callback({ sudokuData, sudokuName, gridMode, showSave: false })
       }
     }
-  }, [sudokuData]);
+  }, [sudokuData])
 
   //get sudoku list
   useEffect(() => {
-    debugger;
+    debugger
     const fetchData = async () => {
       try {
-        const response = await fetch(props.sudokuList_Url);
-        const jsonData = await response.json();
-        setData(jsonData); // Update the state with the API response data
+        const response = await fetch(props.sudokuList_Url)
+        const jsonData = await response.json()
+        setData(jsonData) // Update the state with the API response data
       } catch (error) {
-        console.error("Error fetching data:", error);
+        console.error('Error fetching data:', error)
       }
-    };
-    fetchData(); // Call the function to fetch data when the component mounts
-  }, []);
+    }
+    fetchData() // Call the function to fetch data when the component mounts
+  }, [])
   useEffect(() => {
-    setSudokuData(props.sudokuData);
-  }, [props.sudokuData]);
+    setSudokuData(props.sudokuData)
+  }, [props.sudokuData])
   useEffect(() => {
-    setGridMode(props.gridMode);
-  }, [props.gridMode]);
+    setGridMode(props.gridMode)
+  }, [props.gridMode])
   // useEffect(() => {
   //   if (props.sudokuList.length !== 0) {
   //     setData(props.sudokuList);
   //   }
   // }, [props.sudokuList]);
   useEffect(() => {
-    debugger;
-    if (props.sudokuCreatedData["sudokuList"] !== undefined) {
-      setData(props.sudokuCreatedData["sudokuList"]);
+    debugger
+    if (props.sudokuCreatedData['sudokuList'] !== undefined) {
+      setData(props.sudokuCreatedData['sudokuList'])
       setSudokuUrl(
-        props.sudokuList_Url + "/" + props.sudokuCreatedData["sudokuId"]
-      );
-      setSudokuName(props.sudokuCreatedData["sudokuName"]);
-      setGridMode("view");
+        props.sudokuList_Url + '/' + props.sudokuCreatedData['sudokuId']
+      )
+      setSudokuName(props.sudokuCreatedData['sudokuName'])
+      setGridMode('view')
     }
-  }, [props.sudokuCreatedData]);
+  }, [props.sudokuCreatedData])
 
   const sudokuNamePressed = (id, name) => {
     // debugger;
-    setSudokuUrl(props.sudokuList_Url + "/" + id);
-    setSudokuName(name);
-    setGridMode("view");
-  };
+    setSudokuUrl(props.sudokuList_Url + '/' + id)
+    setSudokuName(name)
+    setGridMode('view')
+  }
 
   return (
     <div>
@@ -92,6 +93,6 @@ function ViewAllSudoku(props) {
         </button>
       ))}
     </div>
-  );
+  )
 }
-export default ViewAllSudoku;
+export default ViewAllSudoku

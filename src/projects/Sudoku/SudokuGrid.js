@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Empty2DArray } from './support/functions.js'
 // import { Fade } from "react-bootstrap";
+import './index.css'
 
 function SudokuGrid(props) {
   // this contain object 2d array
