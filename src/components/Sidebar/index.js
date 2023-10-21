@@ -1,4 +1,5 @@
 import './index.scss'
+import './index2.scss'
 import { Link, NavLink } from 'react-router-dom'
 import Sr_logo from '../../assets/images/sr_logo.png'
 import Sr_logo_sub from '../../assets/images/sr.png'

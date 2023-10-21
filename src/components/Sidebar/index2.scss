@@ -1,0 +1,120 @@
+
+@media screen and (max-width: 900px){
+    .nav-bar{
+        background-color: #181818;
+        display: inline;
+        width: 100%;
+        height: 5%; 
+        min-height: 60px;
+        //border: solid blue;
+        //display: inline;
+        position:absolute;
+        z-index:3;
+        text-align: center;
+
+        .logo{
+            display: block;
+            //border: solid red;
+            width: 10%;
+            margin: 0;
+            padding: 0; 
+            height: 100%;
+            img{
+                display: block;
+                margin: auto auto;
+                width:50px;
+                height: auto;
+    
+                &.sub-logo{
+                    display:none;
+                }
+            }
+        }
+
+        nav{
+            //border: solid red;
+            width: 80%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            display: block;
+            position: absolute;
+            left: 10%; 
+            top: 0%; 
+            text-align: center;
+
+            a{ 
+                //border: solid orange;
+                color: #4d4d4e;
+                font-size: 30px; 
+                //position: absolute;
+                text-decoration: none;
+                height: auto;
+                width: auto;
+                padding: 4%;
+                i{
+                    transition: all 0.3s ease-out;
+                }
+                &:hover{
+                    color: #ffd700;
+                    svg{
+                        color: #ffd700;
+                    }
+                }
+               
+            }
+        }
+
+        ul{
+            //border: solid rgb(34, 0, 255);
+            position: absolute;
+            left: 80%;
+            top: 0;
+            width: 25%;
+            list-style: none;
+            display: flex;
+            margin: 1%;
+            li{  
+                padding: 2%;
+                //border: solid red;
+                a{
+                    font-size: 2rem;
+                    
+                    display: flex;
+                    width: 20%;
+                    
+                    margin: 2%;
+                    &:hover svg{
+                        color: #ffd700;
+                    }
+                }
+            }
+        }
+
+
+    }
+    
+   
+
+    
+    
+
+
+
+    // .nav-bar ul{
+    //     border: solid red;
+    //     width: 10%;
+    //     margin: 0;
+    //     padding: 0;
+    //     display: inline-block;
+    //     position: static;
+    // }
+    // .nav-bar ul li a{
+    //     display: inline;
+    //     position: static; 
+    //     padding: 0%;
+    //     margin: 0%;
+    //     border: solid yellow;
+    // }
+}
+

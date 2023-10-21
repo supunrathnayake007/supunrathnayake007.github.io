@@ -1,24 +1,58 @@
-.home-page{
-    .text-zone{
-        position: absolute;
-         left: 10%;
-         top:20%;
-         transform: translate(-10%);
-         width:80%;
-        max-height: 90%;
-    }
+@media screen and (max-width: 900px){
+    .home-page{
+        .text-zone{
+            position: absolute; 
+             width:100%;
+            max-height: 90%; 
+            left: 10%;
+            top: 8%;
+        }
 
-    h1{
-        color: black;
-        font-size: 53px;
-        margin: 0;
-        font-family: "Coolvetica";
-        font-weight: 400;
-
-        img{
-            width:32px;
+        h1{
+            color: black;
+            font-size: 8vw;
+            margin-top: 3%;
+            font-family: "Coolvetica";
+            font-weight: 400;
+            //text-align: left; 
+            img{
+                width:32px;
+            }
+        }
+        h2{
+            margin-top: 7%;
+            font-size: 2.5vw;
         }
     }
+
+    
+    
+}
+@media screen and (min-width: 900px){
+    .home-page{
+        .text-zone{
+            position: absolute;
+             left: 10%;
+             top:20%;
+             transform: translate(-10%);
+             width:80%;
+            max-height: 90%;
+        }
+    
+        h1{
+            color: black;
+            font-size: 53px;
+            margin: 0;
+            font-family: "Coolvetica";
+            font-weight: 400;
+    
+            img{
+                width:32px;
+            }
+        }
+    }
+    
+    
 }
 
 h2{
