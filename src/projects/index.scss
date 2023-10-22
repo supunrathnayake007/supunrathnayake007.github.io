@@ -1,8 +1,28 @@
+.container {
+  font-size: 15px;
+  //border: solid red;
+}
 
+.project-logo{
+  //border: solid red;
+  width: 150px;
+}
 .project-logo img{
+  //border: solid red;
   width: 100px;
-
+  display: block;
+  margin-left: 25px;
   &:hover{
-    transform: scale(1.1)
+    transform: scale(1.1);
   }
+}
+
+.container{
+  a{
+    text-decoration: none;
+    &:hover{
+      color: red;
+    }
+  }
+
 }

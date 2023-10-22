@@ -1,0 +1,9 @@
+.sudoku_container{
+    position: absolute;
+    top: -5%;
+}
+.top_container{
+    //border: solid red;
+    margin-left: 10%;
+    margin-right: 10%;
+}

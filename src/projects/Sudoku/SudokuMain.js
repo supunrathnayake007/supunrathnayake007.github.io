@@ -1,58 +1,59 @@
-import React, { useEffect, useState } from "react";
-import ViewAllSudoku from "./ViewAllSudoku";
-import SudokuGrid from "./SudokuGrid";
-import SolveSudoku from "./SolveSudoku";
-import NewSudoku from "./NewSudoku";
+import React, { useEffect, useState } from 'react'
+import ViewAllSudoku from './ViewAllSudoku'
+import SudokuGrid from './SudokuGrid'
+import SolveSudoku from './SolveSudoku'
+import NewSudoku from './NewSudoku'
+import './support/index.css'
 
 function SudokuMain(props) {
-  const [advanced_sudokuData, setAdvanced_SudokuData] = useState([]);
-  const [sudokuData, setSudokuData] = useState([]);
-  const [sudokuName, setSudokuName] = useState("");
-  const [newSudokuData, setNewSudokuData] = useState([]);
-  const [sudokuSolvedData, setSudokuSolvedData] = useState([]);
-  const [gridMode, setGridMode] = useState("view"); //Modes- "view","create"
-  const [showSave, setShowSave] = useState(false);
-  const [apiUrls, setApiUrls] = useState(props.apiUrls);
-  const [sudokuList, setSudokuList] = useState([]);
-  const [last_sudokuId, setLast_sudokuId] = useState("");
+  const [advanced_sudokuData, setAdvanced_SudokuData] = useState([])
+  const [sudokuData, setSudokuData] = useState([])
+  const [sudokuName, setSudokuName] = useState('')
+  const [newSudokuData, setNewSudokuData] = useState([])
+  const [sudokuSolvedData, setSudokuSolvedData] = useState([])
+  const [gridMode, setGridMode] = useState('view') //Modes- "view","create"
+  const [showSave, setShowSave] = useState(false)
+  const [apiUrls, setApiUrls] = useState(props.apiUrls)
+  const [sudokuList, setSudokuList] = useState([])
+  const [last_sudokuId, setLast_sudokuId] = useState('')
 
-  const [sudokuCreatedData, setSudokuCreatedData] = useState({});
+  const [sudokuCreatedData, setSudokuCreatedData] = useState({})
 
   useEffect(() => {
-    debugger;
+    debugger
     if (sudokuData !== null) {
       if (sudokuData.length !== 0) {
-        setSudokuSolvedData(sudokuData);
+        setSudokuSolvedData(sudokuData)
       }
     }
-  }, [sudokuData]);
+  }, [sudokuData])
 
   const updateSudokuData = (params) => {
     //view sudoku
-    debugger;
-    setSudokuData(params["sudokuData"]);
-    setSudokuName(params["sudokuName"]);
-    setSudokuSolvedData(params["sudokuData"]);
-    setGridMode(params["gridMode"]);
-    setShowSave(params["showSave"]);
-  };
+    debugger
+    setSudokuData(params['sudokuData'])
+    setSudokuName(params['sudokuName'])
+    setSudokuSolvedData(params['sudokuData'])
+    setGridMode(params['gridMode'])
+    setShowSave(params['showSave'])
+  }
   const updateSudokuSolvedData = (params) => {
     //solve sudoku pressed
     //debugger;
-    setSudokuSolvedData(params["sudokuSolvedData"]);
-  };
+    setSudokuSolvedData(params['sudokuSolvedData'])
+  }
   const newSudokuPressed = (params) => {
     //new Sudoku pressed
-    debugger;
+    debugger
     //setAdvanced_SudokuData(params["advanced_sudokuData"]);
-    setSudokuSolvedData(params["sudokuData"]);
-    setSudokuData(params["sudokuData"]);
-    setSudokuName(params["sudokuName"]);
-    setGridMode(params["gridMode"]);
-    setShowSave(params["showSave"]);
-  };
+    setSudokuSolvedData(params['sudokuData'])
+    setSudokuData(params['sudokuData'])
+    setSudokuName(params['sudokuName'])
+    setGridMode(params['gridMode'])
+    setShowSave(params['showSave'])
+  }
   const updateStatusfmGrid = (params) => {
-    debugger;
+    debugger
     //let sudokuData = [];
     // for (let i = 0; i < 9; i++) {
     //   let sudokuDataLines = [];
@@ -61,22 +62,22 @@ function SudokuMain(props) {
     //   }
     //   sudokuData.push(sudokuDataLines);
     // }
-    setNewSudokuData(params["newSudokuData"]);
-  };
+    setNewSudokuData(params['newSudokuData'])
+  }
   const updateSudokuNameFmGrid = (params) => {
-    debugger;
-    setSudokuName(params["sudokuName"]);
-  };
+    debugger
+    setSudokuName(params['sudokuName'])
+  }
 
   const afterNewSudokuCreated = (params) => {
-    setSudokuCreatedData(params);
+    setSudokuCreatedData(params)
     // setSudokuList(params["sudokuList"]);
     // setLast_sudokuId(params["last_sudokuId"]);
-  };
+  }
 
   return (
-    <div className="">
-      <div className="border border-primary p-3 row">
+    <div className="sudoku_container">
+      <div className="top_container p-3 row">
         <SudokuGrid
           developerMode={props.developerMode}
           callback={updateStatusfmGrid}
@@ -104,7 +105,7 @@ function SudokuMain(props) {
         </div>
       </div>
 
-      <div className="border border-primary p-3 col-sm">
+      <div className="p-3 col-sm">
         <ViewAllSudoku
           callback={updateSudokuData}
           sudokuList_Url={apiUrls.sudokuList_Url}
@@ -116,6 +117,6 @@ function SudokuMain(props) {
         />
       </div>
     </div>
-  );
+  )
 }
-export default SudokuMain;
+export default SudokuMain

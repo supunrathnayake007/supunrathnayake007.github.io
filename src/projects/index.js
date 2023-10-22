@@ -8,6 +8,7 @@ const Projects = () => {
       <div className="project-logo">
         <Link to="/sudoku">
           <img src={sudoku_logo} alt="sudokuLogo"></img>
+          <p className="tile_title">Sudoku Solving tool</p>
         </Link>
       </div>
     </div>
