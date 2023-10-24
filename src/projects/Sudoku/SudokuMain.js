@@ -106,6 +106,7 @@ function SudokuMain(props) {
       </div>
 
       <div className="p-3 col-sm">
+        <h3>Saved Grids</h3>
         <ViewAllSudoku
           callback={updateSudokuData}
           sudokuList_Url={apiUrls.sudokuList_Url}
