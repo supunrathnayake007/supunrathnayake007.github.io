@@ -1,10 +1,14 @@
-html{
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
   font-size: 62.5%;
 }
 
 body {
   margin: 0;
-  font: 300 11px/1.4 'Helvetica Neue', 'sans-serif';/*not working*/
+  font: 300 11px/1.4 'Helvetica Neue', 'sans-serif'; /*not working*/
   color: #444;
   background-color: #ffffff;
   overflow: hidden;
@@ -12,7 +16,6 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
 
 .dashboard {
   margin-top: 200px;
