@@ -26,13 +26,13 @@ const Projects = () => {
   }
 
   return (
-    <div className="min-h-screen bg-slate-800 ">
-      <div className="flex flex-wrap text-white">
+    <div className="lg:-mx-6 lg:my-0 lg:p-5 sm:-mx-20 sm:my-24 xxxs:-mx-14 xxxs:my-24 min-h-screen bg-slate-800 ">
+      <div className="mx-3 flex flex-wrap text-white">
         {data
           ? data.map((project, index) => (
               <div
                 key={index}
-                className="w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/5 xl:w-1/6"
+                className="w-1/4 sm:w-1/3 xxs:w-1/3 xxxs:w-auto md:w-1/4 lg:w-1/5 xl:w-1/6"
               >
                 <ProjectCard key={index} project={project} />
               </div>
@@ -50,7 +50,7 @@ const ProjectCard = (props) => {
   }
 
   return (
-    <div className="hover:border-2 border-sky-500  p-1">
+    <div className="hover:border-2 border-sky-500  p-1 m-1">
       <div>
         <a href={props.project.url} target="_blank" rel="noopener noreferrer">
           <img
