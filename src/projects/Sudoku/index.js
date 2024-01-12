@@ -8,7 +8,7 @@ function SudokuRoot() {
 
   ///for sudokuMain
   const api_debug = true //change to true when debugging the API
-  const isCloud = true
+  const isCloud = false
   const webApiUrl = 'https://supunrathnayake007.pythonanywhere.com'
   const baseApiUrl = api_debug
     ? 'http://127.0.0.1:5000'

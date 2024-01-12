@@ -77,18 +77,20 @@ function SudokuMain(props) {
 
   return (
     <div className="sudoku_container">
-      <div className="top_container p-3 row">
-        <SudokuGrid
-          developerMode={props.developerMode}
-          callback={updateStatusfmGrid}
-          callbackName={updateSudokuNameFmGrid}
-          sudokuData={sudokuData}
-          sudokuName={sudokuName}
-          sudokuSolvedData={sudokuSolvedData}
-          advanced_sudokuData={advanced_sudokuData}
-          gridMode={gridMode}
-        />
-        <div className="col-sm">
+      <div className="flex flex-wrap">
+        <div className="lg:w-1/2 sm:w-2/3 xxs:w-full xxxs:w-full">
+          <SudokuGrid
+            developerMode={props.developerMode}
+            callback={updateStatusfmGrid}
+            callbackName={updateSudokuNameFmGrid}
+            sudokuData={sudokuData}
+            sudokuName={sudokuName}
+            sudokuSolvedData={sudokuSolvedData}
+            advanced_sudokuData={advanced_sudokuData}
+            gridMode={gridMode}
+          />
+        </div>
+        <div className="lg:w-1/3 lg:mx-4 lg:my-14 sm:1/3 sm:mx-6 sm:my-8">
           <SolveSudoku
             callback={updateSudokuSolvedData}
             sudokuData={sudokuData}
