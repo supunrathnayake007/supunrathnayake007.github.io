@@ -45,7 +45,7 @@ const Contact = () => {
     <>
       <div className="container contact-page">
         <div className="flex flex-wrap">
-          <div className="w-1/2">
+          <div className="lg:w-1/2 sm:w-full">
             <h1>
               <AnimatedLetters
                 letterClass={letterClass}
@@ -60,7 +60,7 @@ const Contact = () => {
               form either.
             </p>
           </div>
-          <div className="w-2/3">
+          <div className="lg:w-2/3 xxs:w-full">
             <form ref={form} onSubmit={sendEmail}>
               <div className="flex flex-wrap">
                 <div className={'w-1/2 '}>
