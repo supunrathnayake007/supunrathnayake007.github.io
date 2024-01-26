@@ -6,6 +6,8 @@ import emailjs from '@emailjs/browser'
 import AnimatedLetters from '../AnimatedLetters'
 import './index.scss'
 
+const commonInput = 'm-1 p-1 w-full px-3 py-2 border rounded-md '
+
 const Contact = () => {
   const [letterClass, setLetterClass] = useState('text-animate')
   const form = useRef()
@@ -20,7 +22,12 @@ const Contact = () => {
     e.preventDefault()
 
     emailjs
-      .sendForm('gmail', 'template_YeJhZkgb', form.current, 'your-token')
+      .sendForm(
+        'service_d5aeot9',
+        'template_z8w06q8',
+        form.current,
+        '6d9NNvibgSbmHaAHZ'
+      )
       .then(
         () => {
           alert('Message successfully sent!')
@@ -35,56 +42,78 @@ const Contact = () => {
   return (
     <>
       <div className="container contact-page">
-        <div className="text-zone">
-          <h1>
-            <AnimatedLetters
-              letterClass={letterClass}
-              strArray={['C', 'o', 'n', 't', 'a', 'c', 't', ' ', 'm', 'e']}
-              idx={15}
-            />
-          </h1>
-          <p>
-            I am interested in freelance opportunities - especially on ambitious
-            or large projects. However, if you have any other requests or
-            questions, don't hesitate to contact me using below form either.
-          </p>
-          <div className="contact-form">
+        <div className="flex flex-wrap">
+          <div className="w-1/2">
+            <h1>
+              <AnimatedLetters
+                letterClass={letterClass}
+                strArray={['C', 'o', 'n', 't', 'a', 'c', 't', ' ', 'm', 'e']}
+                idx={15}
+              />
+            </h1>
+            <p>
+              I am interested in freelance opportunities - especially on
+              ambitious or large projects. However, if you have any other
+              requests or questions, don't hesitate to contact me using below
+              form either.
+            </p>
+          </div>
+          <div className="w-2/3">
             <form ref={form} onSubmit={sendEmail}>
-              <ul>
-                <li className="half">
-                  <input placeholder="Name" type="text" name="name" required />
-                </li>
-                <li className="half">
+              <div className="flex flex-wrap">
+                <div className={'w-1/2 '}>
                   <input
+                    className={commonInput}
+                    placeholder="Name"
+                    type="text"
+                    name="name"
+                    required
+                  />
+                </div>
+                <div className={'w-1/2 px-2'}>
+                  <input
+                    className={commonInput}
                     placeholder="Email"
                     type="email"
                     name="email"
                     required
                   />
-                </li>
-                <li>
+                </div>
+                <div className="w-full">
                   <input
+                    className={commonInput}
                     placeholder="Subject"
                     type="text"
                     name="subject"
                     required
                   />
-                </li>
-                <li>
+                </div>
+                <div className="w-full">
                   <textarea
+                    rows="4"
+                    className="block m-1 p-1 w-full px-3 py-2 border rounded-lg"
                     placeholder="Message"
                     name="message"
                     required
                   ></textarea>
-                </li>
-                <li>
-                  <input type="submit" className="flat-button" value="SEND" />
-                </li>
-              </ul>
+                </div>
+                <div className="w-full">
+                  <div className="flex flex-wrap">
+                    <div className="w-4/5"></div>
+                    <div className="w-1/5">
+                      <input
+                        type="submit"
+                        className="w-full m-1 p-1 px-3 bg-lime-500 rounded hover:bg-lime-600  text-white "
+                        value="Send"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
             </form>
           </div>
         </div>
-        <div className="info-map">
+        {/* <div className="info-map">
           Slobodan Gajić,
           <br />
           Serbia,
@@ -101,7 +130,7 @@ const Contact = () => {
               <Popup>Sloba lives here, come over for a cup of coffee :)</Popup>
             </Marker>
           </MapContainer>
-        </div>
+        </div> */}
       </div>
       <Loader type="pacman" />
     </>
