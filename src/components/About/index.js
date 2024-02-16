@@ -29,14 +29,14 @@ const About = () => {
         <div className="ml-10 flex flex-wrap">
           <div className="lg:w-1/2 sm:2/3">
             <div className="text-zone">
-              <div className="mb-8 text-8xl underline">
+              <div className="mb-8 lg:text-8xl underline">
                 <AnimatedLetters
                   letterClass={letterClass}
                   strArray={['A', 'b', 'o', 'u', 't', ' ', 'm', 'e']}
                   idx={15}
                 />
               </div>
-              <div className="text-4xl">
+              <div className="lg:text-4xl">
                 <p>
                   I'm a very ambitious front-end developer looking for a role in
                   an established IT company with the opportunity to work with
@@ -50,30 +50,6 @@ const About = () => {
                   If I need to define myself in one sentence that would be a
                   family person, photography enthusiast, and tech-obsessed!!!
                 </p>
-              </div>
-            </div>
-          </div>
-          <div className="lg:w-1/2 sm:w-full lg:mt-48">
-            <div className="stage-cube-cont">
-              <div className="cubespinner">
-                <div className="face1">
-                  <FontAwesomeIcon icon={faAngular} color="#DD0031" />
-                </div>
-                <div className="face2">
-                  <FontAwesomeIcon icon={faHtml5} color="#F06529" />
-                </div>
-                <div className="face3">
-                  <FontAwesomeIcon icon={faCss3} color="#28A4D9" />
-                </div>
-                <div className="face4">
-                  <FontAwesomeIcon icon={faReact} color="#5ED4F4" />
-                </div>
-                <div className="face5">
-                  <FontAwesomeIcon icon={faJsSquare} color="#EFD81D" />
-                </div>
-                <div className="face6">
-                  <FontAwesomeIcon icon={faGitAlt} color="#EC4D28" />
-                </div>
               </div>
             </div>
           </div>
