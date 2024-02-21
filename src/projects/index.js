@@ -1,7 +1,5 @@
 import { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
-import sudoku_logo from './assets/sudoku.png'
-import './index.scss'
+//import './index.scss'
 
 const Projects = () => {
   const [data, setData] = useState([])
@@ -9,7 +7,7 @@ const Projects = () => {
     LoadAllProject()
   }, [])
   async function LoadAllProject() {
-    debugger
+    //debugger
     try {
       const res = await fetch(
         'https://social-media-clone-mauve.vercel.app/api/forPortfolioSite/getAllProjects'
@@ -26,13 +24,13 @@ const Projects = () => {
   }
 
   return (
-    <div className="lg:-mx-6 lg:my-0 lg:p-5 sm:-mx-20 sm:my-24 xxxs:-mx-14 xxxs:my-24 min-h-screen bg-slate-800 ">
-      <div className="mx-3 flex flex-wrap text-white">
+    <div className="w-full  my-10 ">
+      <div className="flex flex-wrap ">
         {data
           ? data.map((project, index) => (
               <div
                 key={index}
-                className="w-1/4 sm:w-1/3 xxs:w-1/3 xxxs:w-auto md:w-1/4 lg:w-1/5 xl:w-1/6"
+                className="w-1/3 sm:w-1/3 xxs:w-1/3 xxxs:w-auto md:w-1/3 lg:w-1/4 xl:w-1/6 "
               >
                 <ProjectCard key={index} project={project} />
               </div>
@@ -50,8 +48,8 @@ const ProjectCard = (props) => {
   }
 
   return (
-    <div className="hover:border-2 border-sky-500  p-1 m-1">
-      <div>
+    <div className="hover:border-2 border-sky-500 m-1 text-xs bg-slate-300 rounded p-2 ">
+      <div className="flex justify-center">
         <a href={props.project.url} target="_blank" rel="noopener noreferrer">
           <img
             className="w-80"
@@ -76,7 +74,9 @@ const ProjectCard = (props) => {
           </button>
         }
       </div>
-      <div>{props.project.selectedTechs}</div>
+      <div className="whitespace-normal text-[0.5rem]">
+        <p>{props.project.selectedTechs}</p>
+      </div>
     </div>
   )
 }

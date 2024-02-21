@@ -43,20 +43,20 @@ const Contact = () => {
 
   return (
     <>
-      <div className="xxxs:mt-32 pr-40">
+      <div className="mt-10 mx-4">
         <div className="flex flex-wrap xs:pr-20">
           <div className="lg:w-1/2 xxs:w-full">
             <div className="mb-4 text-5xl">Hi, I'm Supun Rathnayake</div>
 
-            <p className="text-xl">
+            <p className="">
               I am interested in freelance opportunities - especially on
               ambitious or large projects. However, if you have any other
               requests or questions, don't hesitate to contact me using below
               form either.
             </p>
-            <div className="pl-2 mb-2 text-4xl">Contact Me</div>
+            <div className="pl-2 mb-2 text-xl">Contact Me</div>
           </div>
-          <div className="lg:w-2/3 xxs:w-full text-xl">
+          <div className="lg:w-2/3 xxs:w-full ">
             <form ref={form} onSubmit={sendEmail}>
               <div className="flex flex-wrap">
                 <div className={'w-1/2 '}>

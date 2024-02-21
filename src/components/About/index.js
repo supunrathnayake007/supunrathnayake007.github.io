@@ -26,17 +26,17 @@ const About = () => {
   return (
     <>
       <div className="container about-page">
-        <div className="ml-10 flex flex-wrap">
-          <div className="lg:w-1/2 sm:2/3">
+        <div className="flex flex-wrap">
+          <div className="w-full my-10">
             <div className="text-zone">
-              <div className="mb-8 lg:text-8xl underline">
+              <div className="mb-8 text-6xl underline">
                 <AnimatedLetters
                   letterClass={letterClass}
                   strArray={['A', 'b', 'o', 'u', 't', ' ', 'm', 'e']}
                   idx={15}
                 />
               </div>
-              <div className="lg:text-4xl">
+              <div className="lg:text-xl">
                 <p>
                   I'm a very ambitious front-end developer looking for a role in
                   an established IT company with the opportunity to work with
