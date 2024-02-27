@@ -3,7 +3,7 @@ import ViewAllSudoku from './ViewAllSudoku'
 import SudokuGrid from './SudokuGrid'
 import SolveSudoku from './SolveSudoku'
 import NewSudoku from './NewSudoku'
-import './support/index.css'
+//import './support/index.css'
 
 function SudokuMain(props) {
   const [advanced_sudokuData, setAdvanced_SudokuData] = useState([])
@@ -20,7 +20,7 @@ function SudokuMain(props) {
   const [sudokuCreatedData, setSudokuCreatedData] = useState({})
 
   useEffect(() => {
-    debugger
+    //debugger
     if (sudokuData !== null) {
       if (sudokuData.length !== 0) {
         setSudokuSolvedData(sudokuData)
@@ -30,7 +30,7 @@ function SudokuMain(props) {
 
   const updateSudokuData = (params) => {
     //view sudoku
-    debugger
+    //debugger
     setSudokuData(params['sudokuData'])
     setSudokuName(params['sudokuName'])
     setSudokuSolvedData(params['sudokuData'])
@@ -44,7 +44,7 @@ function SudokuMain(props) {
   }
   const newSudokuPressed = (params) => {
     //new Sudoku pressed
-    debugger
+    //debugger
     //setAdvanced_SudokuData(params["advanced_sudokuData"]);
     setSudokuSolvedData(params['sudokuData'])
     setSudokuData(params['sudokuData'])
@@ -53,7 +53,7 @@ function SudokuMain(props) {
     setShowSave(params['showSave'])
   }
   const updateStatusfmGrid = (params) => {
-    debugger
+    //debugger
     //let sudokuData = [];
     // for (let i = 0; i < 9; i++) {
     //   let sudokuDataLines = [];
@@ -65,7 +65,7 @@ function SudokuMain(props) {
     setNewSudokuData(params['newSudokuData'])
   }
   const updateSudokuNameFmGrid = (params) => {
-    debugger
+    //debugger
     setSudokuName(params['sudokuName'])
   }
 
@@ -76,7 +76,7 @@ function SudokuMain(props) {
   }
 
   return (
-    <div className="sudoku_container">
+    <div className="p-0.5 m-0.5 ">
       <div className="flex flex-wrap">
         <div className="lg:w-1/2 sm:w-2/3 xxs:w-full xxxs:w-full">
           <SudokuGrid
@@ -90,7 +90,7 @@ function SudokuMain(props) {
             gridMode={gridMode}
           />
         </div>
-        <div className="lg:w-1/3 lg:mx-4 lg:my-14 sm:1/3 sm:mx-6 sm:my-8">
+        <div className="flex lg:w-1/3 lg:mx-4 lg:my-14 sm:1/3 sm:mx-6 sm:my-8">
           <SolveSudoku
             callback={updateSudokuSolvedData}
             sudokuData={sudokuData}
@@ -107,7 +107,7 @@ function SudokuMain(props) {
         </div>
       </div>
 
-      <div className="p-3 col-sm">
+      <div className="">
         <h3>Saved Grids</h3>
         <ViewAllSudoku
           callback={updateSudokuData}

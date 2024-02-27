@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import SudokuMain from './SudokuMain.js'
 import 'bootstrap/dist/css/bootstrap.min.css'
-import './index.css'
+//import './index.css'
 
 function SudokuRoot() {
   //console.log("App here.");
@@ -23,7 +23,7 @@ function SudokuRoot() {
   ///end SudokuMain
 
   return (
-    <div className="container">
+    <div className="">
       <SudokuMain apiUrls={apiUrls} developerMode={true} />
     </div>
   )

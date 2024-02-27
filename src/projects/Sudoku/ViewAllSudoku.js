@@ -11,7 +11,7 @@ function ViewAllSudoku(props) {
 
   //get selected sudoku data
   useEffect(() => {
-    debugger
+    //debugger
     const fetchData = async () => {
       try {
         const response = await fetch(sudokuUrl)
@@ -28,7 +28,7 @@ function ViewAllSudoku(props) {
 
   //send back selected sudoku data
   useEffect(() => {
-    debugger
+    //debugger
     if (sudokuData !== null) {
       if (gridMode === 'view') {
         props.callback({ sudokuData, sudokuName, gridMode, showSave: false })
@@ -38,7 +38,7 @@ function ViewAllSudoku(props) {
 
   //get sudoku list
   useEffect(() => {
-    debugger
+    //debugger
     const fetchData = async () => {
       try {
         const response = await fetch(props.sudokuList_Url)
@@ -62,7 +62,7 @@ function ViewAllSudoku(props) {
   //   }
   // }, [props.sudokuList]);
   useEffect(() => {
-    debugger
+    //debugger
     if (props.sudokuCreatedData['sudokuList'] !== undefined) {
       setData(props.sudokuCreatedData['sudokuList'])
       setSudokuUrl(
@@ -81,12 +81,12 @@ function ViewAllSudoku(props) {
   }
 
   return (
-    <div>
+    <div className="border-1 p-2 rounded">
       {data.map((item, i) => (
         <button
           key={i}
           type="button"
-          className="btn btn-primary m-1"
+          className="bg-blue-500 hover:bg-blue-600 text-white rounded m-0.5 p-0.5 px-2"
           onClick={() => sudokuNamePressed(String(item[0]), item[1])}
         >
           {item[1]}

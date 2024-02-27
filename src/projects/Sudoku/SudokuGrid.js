@@ -13,12 +13,12 @@ function SudokuGrid(props) {
   const [a_sudokuData_exist, set_A_sudokuData_exist] = useState(false)
   const [sudokuName, setSudokuName] = useState('')
   const [gridMode, setGridMode] = useState('view') //Modes- "view","create"
-  debugger
+  //debugger
 
   // sudokuData and solved_sudokuData states update from props
   useEffect(() => {
     if (props.sudokuSolvedData.length !== 0) {
-      debugger
+      //debugger
       let sudoku_data = []
       let sudoku_solvedData = []
       for (let i = 0; i < 9; i++) {
@@ -31,7 +31,7 @@ function SudokuGrid(props) {
         sudoku_solvedData.push(sudoku_solvedDataLines)
         sudoku_data.push(sudoku_dataLines)
       }
-      debugger
+      //debugger
       if (gridMode === 'view') {
         setSolved_sudokuData(sudoku_solvedData)
       }
@@ -50,7 +50,7 @@ function SudokuGrid(props) {
 
   useEffect(() => {
     if (gridMode === 'create') {
-      debugger
+      //debugger
       let sudoku_data = developerInputs.split('')
       let data = Empty2DArray()
       if (sudoku_data.length > 1) {
@@ -76,7 +76,7 @@ function SudokuGrid(props) {
     debugger
     if (sudokuData !== null) {
       if (sudokuData.length !== 0) {
-        debugger
+        //debugger
         let sudoku_Data = []
         let developerInputData = ''
         for (let i = 0; i < 9; i++) {
@@ -127,7 +127,7 @@ function SudokuGrid(props) {
           sudoku_Data.push(advanced_sudokuDataLines)
           //debugger;
         }
-        debugger
+        //debugger
 
         setAdvanced_SudokuData(sudoku_Data)
         set_A_sudokuData_exist(true)
@@ -144,7 +144,7 @@ function SudokuGrid(props) {
   }, [sudokuData, solved_sudokuData])
 
   const inputOnChange = (value, i, j) => {
-    debugger
+    //debugger
     // let sudokuData = [...advanced_sudokuData];
     // sudokuData[i][j].value = Number(value);
     // setAdvanced_SudokuData(sudokuData);
@@ -161,7 +161,7 @@ function SudokuGrid(props) {
     // }
   }
   const nameOnChange = (value) => {
-    debugger
+    //debugger
     setSudokuName(value)
     props.callbackName({ sudokuName: value })
   }
@@ -170,11 +170,11 @@ function SudokuGrid(props) {
     setDeveloperInputs(value)
   }
   const inputClassName =
-    'border-2 border-slate-100 rounded w-14 text-white m-1 text-center'
+    'border-2 border-slate-100 rounded w-8 text-white m-1 text-center text-sm bg-slate-300'
 
   return (
     <div className="flex">
-      <div className="">
+      <div className="text-sm">
         <div className="">
           {gridMode === 'create' ? (
             <div>
@@ -227,7 +227,7 @@ function SudokuGrid(props) {
         ))}
       </table> */}
 
-        <div className="flex flex-wrap border-2 border-red-800 ">
+        <div className="flex flex-wrap border-2 border-red-800 rounded-lg">
           {/* first box */}
           <div className="flex flex-wrap border-2 border-red-800  w-1/3 p-1">
             <div className="w-1/3">

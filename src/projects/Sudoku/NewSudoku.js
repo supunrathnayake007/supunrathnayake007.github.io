@@ -11,12 +11,12 @@ const NewSudoku = (props) => {
   const [sudokuCreatedData, setSudokuCreatedData] = useState({})
 
   useEffect(() => {
-    debugger
+    //debugger
   }, [currentData])
 
   useEffect(() => {
     if (sudokuData.length !== 0) {
-      debugger
+      //debugger
       props.callback({
         sudokuData: sudokuData,
         sudokuName: sudokuName,
@@ -27,12 +27,12 @@ const NewSudoku = (props) => {
   }, [sudokuData])
 
   useEffect(() => {
-    debugger
+    //debugger
     setCurrentData(props.newSudokuData)
     setShowSave(props.showSave)
   }, [props.newSudokuData])
   useEffect(() => {
-    debugger
+    //debugger
     setShowSave(props.showSave)
   }, [props.showSave])
   useEffect(() => {
@@ -40,7 +40,7 @@ const NewSudoku = (props) => {
   }, [props.sudokuName])
 
   const newSudokuPressed = () => {
-    debugger
+    //debugger
     let sudokuData = []
     for (let i = 0; i < 9; i++) {
       let advanced_sudokuDataLines = []
@@ -58,7 +58,7 @@ const NewSudoku = (props) => {
       }
       sudokuData.push(sudokuLine)
     }
-    debugger
+    //debugger
     //setAdvanced_SudokuData(sudokuData);
     setSudokuData(sudokuData)
     setSudokuName('New_Sudoku')
@@ -67,7 +67,7 @@ const NewSudoku = (props) => {
   const saveButtonPressed = () => {
     let count = 0
     let data_str = ''
-    debugger
+    //debugger
     for (let i = 0; i < 9; i++) {
       for (let j = 0; j < 9; j++) {
         if (currentData[i][j] > 0) {
@@ -85,7 +85,7 @@ const NewSudoku = (props) => {
         }
       }
     }
-    debugger
+    //debugger
     let dataJson = JSON.stringify({
       sudoku_name: sudokuName,
       sudoku_data: data_str,
@@ -99,7 +99,7 @@ const NewSudoku = (props) => {
           },
           body: dataJson,
         })
-        debugger //for check api Data
+        //debugger //for check api Data
         const data = await response.json()
         setSudokuCreatedData({
           sudokuList: data['sudokuList'],
@@ -130,7 +130,7 @@ const NewSudoku = (props) => {
     <div>
       <button
         type="button"
-        className="btn btn-primary m-1"
+        className="bg-yellow-300 hover:bg-yellow-400 m-0.5 py-1 px-2 text-white rounded border-1 border-lime-500"
         onClick={() => newSudokuPressed()}
       >
         NewSudoku
@@ -138,7 +138,7 @@ const NewSudoku = (props) => {
       {showSave ? (
         <button
           type="button"
-          className="btn btn-warning m-1"
+          className="bg-red-400 hover:bg-red-500 m-0.5 py-1 px-2 text-white rounded "
           onClick={saveButtonPressed}
         >
           Save
