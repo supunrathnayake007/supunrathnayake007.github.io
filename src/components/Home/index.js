@@ -3,8 +3,8 @@ import ViewPosts from '../posts/viewPosts'
 
 const Home = () => {
   return (
-    <div className="">
-      <div className="flex flex-wrap mx-10 my-10">
+    <div className="w-full ">
+      <div className="flex flex-wrap ml-10 my-10">
         <div className="w-full ">
           <div className="text-5xl font-bold flex flex-wrap ">
             <div className="w-full  my-2">Hi,</div>{' '}
@@ -22,7 +22,7 @@ const Home = () => {
         </div>
       </div>
       <div className="w-full">
-        <div className="flex justify-center w-full ">
+        <div className="flex justify-center w-full">
           <ViewPosts />
         </div>
       </div>
