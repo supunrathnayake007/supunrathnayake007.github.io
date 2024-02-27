@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import SudokuMain from './SudokuMain.js'
 import 'bootstrap/dist/css/bootstrap.min.css'
+import { Helmet } from 'react-helmet'
 //import './index.css'
 
 function SudokuRoot() {
@@ -24,6 +25,11 @@ function SudokuRoot() {
 
   return (
     <div className="">
+      <Helmet>
+        <title>Sudoku Solver</title>
+        <meta name="description" content="this is a sudoku solving algorithm" />
+        <meta name="keywords" content="SR Sudoku solver, Sudoku Algorithm" />
+      </Helmet>
       <SudokuMain apiUrls={apiUrls} developerMode={true} />
     </div>
   )

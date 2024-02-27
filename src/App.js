@@ -7,10 +7,18 @@ import Contact from './components/Contact'
 import About from './components/About'
 import Projects from './projects'
 import SudokuRoot from './projects/Sudoku'
+import { Helmet } from 'react-helmet'
 
 function App() {
   return (
     <div className="">
+      <Helmet>
+        <meta name="description" content="Hi, I'm Supun Rathnayake" />
+        <meta
+          name="keywords"
+          content="Supun Rathnayake Portfolio,Supun,Rathnayake"
+        />
+      </Helmet>
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
