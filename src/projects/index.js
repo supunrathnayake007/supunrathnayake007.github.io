@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 //import './index.scss'
+const apiUrl = process.env.REACT_APP_API_URL
 
 const Projects = () => {
   const [data, setData] = useState([])
@@ -9,9 +10,7 @@ const Projects = () => {
   async function LoadAllProject() {
     //debugger
     try {
-      const res = await fetch(
-        'https://social-media-clone-mauve.vercel.app/api/forPortfolioSite/getAllProjects'
-      )
+      const res = await fetch(apiUrl + 'api/forPortfolioSite/getAllProjects')
       if (!res.ok) {
         throw new Error('Network response was not ok.')
       }

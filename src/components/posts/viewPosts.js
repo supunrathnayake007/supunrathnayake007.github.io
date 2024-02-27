@@ -3,6 +3,7 @@ import { useEffect, useState, useRef } from 'react'
 import ViewPost from './viewPost'
 import axios from 'axios'
 import HashLoaderC from '../loaders/HashLoaderC'
+const apiUrl = process.env.REACT_APP_API_URL
 
 export default function ViewPosts() {
   const dataPerPage = 2
@@ -14,20 +15,18 @@ export default function ViewPosts() {
 
   useEffect(() => {
     //loadPosts(1);
+    // debugger
   }, [])
 
   const loadPosts = async (pageNumber) => {
     try {
-      debugger
-      const res = await axios.post(
-        'https://social-media-clone-mauve.vercel.app/api/posts/viewPosts',
-        {
-          action: 'loadPosts',
-          dataPerPage,
-          pageNumber,
-          loadedDataCount: posts.length,
-        }
-      )
+      //debugger
+      const res = await axios.post(apiUrl + 'api/posts/viewPosts', {
+        action: 'loadPosts',
+        dataPerPage,
+        pageNumber,
+        loadedDataCount: posts.length,
+      })
       const responseData = res.data
       setNoMorePosts(responseData.noMorePosts)
       setPosts((prevPosts) => [...prevPosts, ...responseData.posts])
