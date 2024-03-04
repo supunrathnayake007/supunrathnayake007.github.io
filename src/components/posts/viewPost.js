@@ -22,9 +22,10 @@ export default function ViewPost(props) {
             }}
           />
         </div>
-        <div className="w-full m-1 p-2 text-justify rounded-md my-2">
-          {post.desc}
-        </div>
+        <div
+          className="w-full m-1 p-2 text-justify rounded-md my-2"
+          dangerouslySetInnerHTML={{ __html: post.desc }}
+        />
       </div>
     </div>
   )
